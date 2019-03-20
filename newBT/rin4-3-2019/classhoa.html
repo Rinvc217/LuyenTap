@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Hoa {
+        constructor (_name,_age,_color,_price,_soil){
+            this.name = _name;
+            this.age = _age;
+            this.color = _color;
+            this.price = _price;
+            this.soil = _soil;
+        }
+
+    }
+
+    // arrayHoa = [];
+
+    // arrayHoa[0] = new Hoa('hong', 20, 'vang', 1000, 'thit');
+    // arrayHoa[1] = new Hoa('cuc', 10, 'red', 500, 'cat');
+    // arrayHoa[2] = new Hoa('mai', 10, 'red', 500, 'do');
+    // arrayHoa[3] = new Hoa('lan', 10, 'tim', 500, 'thit');
+    // arrayHoa[4] = new Hoa('dao', 10, 'xanh', 500, 'cat');
+    // arrayHoa[5] = new Hoa('sao', 10, 'trang', 500, 'cat');
+    // arrayHoa[6] = new Hoa('sua', 10, 'den', 500, 'cat');
+    // arrayHoa[7] = new Hoa('sung', 10, 'red', 500, 'thit');
+    // arrayHoa[8] = new Hoa('sung', 10, 'cam', 500, 'cat');
+    // arrayHoa[9] = new Hoa('sung', 10, 'cam', 500, 'cat');
+
+
+
+    // for (var i = 0; i < arrayHoa.length; i++) {
+    //     if (arrayHoa[i].color == 'red' && arrayHoa[i].soil == 'thit') {
+    //         document.write(arrayHoa[i].name + ' ' + arrayHoa[i].color + ' ' + arrayHoa[i].soil +'<br/>');
+    //     }
+    // }
+
+    dsHoa = [];
+
+    for (var i = 0; i<3; i++) {
+        name = prompt('Nhap ten hoa '+ "id"+ i);
+        age = prompt('Nhap tuoi '+ "id"+ i);
+        color = prompt('Nhap mau '+ "id"+ i);
+        price = prompt('Nhap gia '+ "id"+ i);
+        soil = prompt('Nhap dat '+ "id"+ i);
+        dsHoa[i] = new Hoa(name,age,color,price,soil);
+    }
+
+    for (var i = 0; i<dsHoa.length; i++) {
+        // if (dsHoa[i].color == 'red') {
+            document.write(" loài hoa " + " "+  dsHoa[i].name + " " + "có màu " + " " + dsHoa[i].color + " " + "trồng trên đất" + " " + dsHoa[i].soil +"<br/>");
+        // }
+    }
+    // if (hoa1.color == 'red') {
+    //     document.write(hoa1.name + ' ' +hoa1.color + ' ' +hoa1.soil);
+    // };
+
+    // if (hoa2.color == 'red') {
+    //     document.write(hoa2.name + ' ' + hoa2.color + ' ' + hoa2.soil);
+    // };
+
+    // if (hoa3.color == 'red') {
+    //     document.write(hoa3.name+ ' ' + hoa3.color + ' ' +hoa3.soil);
+    // };
+
+    // if (hoa4.color == 'red') {
+    //     document.write(hoa4.name+ ' ' + hoa4.color + ' ' +hoa4.soil);
+    // };
+
+    // if (hoa5.color == 'red') {
+    //     document.write(hoa5.name+ ' ' + hoa5.color + ' ' +hoa5.soil);
+    // };
+
+    // if (hoa6.color == 'red') {
+    //     document.write(hoa6.name+ ' ' + hoa6.color + ' ' +hoa6.soil);
+    // };
+
+    // if (hoa7.color == 'red') {
+    //     document.write(hoa7.name+ ' ' + hoa7.color + ' ' +hoa7.soil);
+    // };
+
+    // if (hoa8.color == 'red') {
+    //     document.write(hoa8.name+ ' ' + hoa8.color + ' ' +hoa8.soil);
+    // };
+
+    // if (hoa9.color == 'red') {
+    //     document.write(hoa9.name+ ' ' + hoa9.color + ' ' +hoa9.soil);
+    // };
+
+    // if (hoa10.color == 'red') {
+    //     document.write(hoa10.name+ ' ' + hoa10.color + ' ' +hoa10.soil);
+    // };
+
+    
+
+    // for (var i=0; i<10; i++){
+        
+    //     var name = prompt("nhập tên loài hoa:" + i);
+    //     var color = prompt("nhap mau hoa:");
+    //     var objHoa = new Hoa(name,8,color,150,soil);
+
+    //     dsHoa.push(objHoa);
+    // }
+    
+    // for (let i=0; i<10; i++){
+    //     if (dsHoa[i].color == 'red' && objHoa.soil == 'thit')
+    //     document.write(dsHoa[i].name+' '+dsHoa[i].color+'<br/>');
+
+    // }
+
+    </script>
+</body>
+</html>

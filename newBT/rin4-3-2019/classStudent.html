@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Student {
+        constructor(_name,_lastname,_id,_sex,_anhvan,_hoa,_sinh){
+            this.name = _name;
+            this.lastname = _lastname;
+            this.id = _id;
+            this.sex = _sex;
+            this.anhvan = _anhvan;
+            this.hoa = _hoa;
+            this.sinh = _sinh;
+        }
+
+        dtbStudent(){
+            var dtb = 0;
+            var dtb = (this.anhvan + this.hoa + this.sinh)/3;
+            return(dtb);
+        }
+        xeploaiStudent(){
+            var dtb = this.dtbStudent();
+            var txtreturn = "";
+
+            if (dtb > 9)
+                txtreturn = "xuất xắc";
+            else if(dtb > 8)
+                txtreturn = "Giỏi";
+            else if(dtb > 5)
+                txtreturn = "TB khá";
+                else
+                    txtreturn = " Yếu ";
+            
+            var txtThilai = "";
+            if(this.anhvan < 5)
+                txtThilai = txtThilai + "AnhVăn";
+            if(this.hoa < 5)
+                txtThilai = txtThilai + "Hóa";
+            if(this.sinh < 5)
+                txtThilai = txtThilai + "Sinh học";
+            if(txtThilai.length > 0)
+                txtThilai =  " thi lại môn" + " : " + txtThilai ;
+            else
+                txtThilai = "không thi lại";
+
+            txtreturn = txtreturn + txtThilai;
+            return(txtreturn);
+        }
+
+        callStuden(){
+            var dtb = this.dtbStudent();
+            var xeploai = this.xeploaiStudent();
+            return (this.lastname + this.name + "," + this.sex + "," + this.id + "," + dtb + "," + xeploai);
+        }
+
+    }
+    var objStudent = new Student("Rin","Võ Công","CH001","nam",2,4,8);
+    document.write(objStudent.callStuden());
+
+</script>
+</body>
+</html>

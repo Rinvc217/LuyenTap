@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class HocVien{
+            constructor(_name,_faculty,_year,_sex,_toan,_ly,_hoa){
+                this.name = _name;
+                this.faculty = _faculty;
+                this.year = _year;
+                this.sex = _sex;
+                this.toan = _toan;
+                this.ly = _ly;
+                this.hoa = _hoa;
+
+            }
+
+            dtbHocVien(){
+                var dtb = (this.toan + this.ly + this.hoa)/3;
+                return(dtb);
+            }
+
+            xeploaiHocVien(){
+                var dtb = this.dtbHocVien();
+                var txtxeploai = "";
+                    if(dtb > 9)
+                        txtxeploai = "xuất xắc";
+                    else if(dtb > 8)
+                        txtxeploai = " giỏi";
+                    else if(dtb > 7)
+                        txtxeploai = "khá";
+                    else if(dtb >= 5)
+                        txtxeploai = "trung bình";
+                        else
+                            txtxeploai = "yếu";
+                
+                var txtThilai = "";
+                    if(this.toan <5)
+                        txtThilai = txtThilai + " toán";
+                    if(this.ly < 5)
+                        txtThilai = txtThilai + " lý";
+                    if(this.hoa < 5)
+                        txtThilai = txtThilai + " hóa";
+                    if(txtThilai.length >0)
+                        txtThilai = "thi lại các môn" + txtThilai ;
+                        else
+                        txtThilai = "không thi lại môn nào";
+                txtxeploai = txtxeploai + txtThilai;
+                return txtxeploai;
+            }
+            callHocVien(){
+                var dtb = this.dtbHocVien();
+                var xeploai = this.xeploaiHocVien();
+                return('có điểm tb là ' + dtb + ' xếp loại '+ xeploai);
+            }
+        }
+
+        var dsHocVien = [];
+        for (var i=0; i<2; i++){
+            name = prompt("nhập họ & tên học viên "+ i);
+            faculty = prompt("nhập khoa học viên học "+ i);
+            year = prompt("nhập ngày/tháng/năm HV nhập học "+ i);
+            sex = prompt("nhập giới tính "+ i);
+            toan = parseInt(prompt("nhập điểm toán "+ i));
+            ly = parseInt(prompt("nhập điểm lý "+ i));
+            hoa = parseInt(prompt("nhập điểm hóa "+ i));
+            dsHocVien[i] = new HocVien(name,faculty,year,sex,toan,ly,hoa);     
+        }
+
+
+        for( var i=0; i<dsHocVien.length; i++){
+            document.write("học viên " + dsHocVien[i].name + " khoa " + dsHocVien[i].faculty
+             + " nhập học ngày " + dsHocVien[i].year + " giới tính " + dsHocVien[i].sex + " điểm toán " 
+             + dsHocVien[i].toan + " điểm lý " + dsHocVien[i].ly + " điểm hóa " 
+             + dsHocVien[i].hoa + dsHocVien[i].callHocVien()+ "</br>");
+        }
+        
+    </script>
+</body>
+</html>

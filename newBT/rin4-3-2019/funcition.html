@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var array= [1,2,3,4,5,6,7,54,43,34,12];
+        function maxInArray (array){
+            var max = array[0];
+            for(var i=0;i<array.length;i++){
+                if(array[i]>max){
+                    max = array[i];
+                }
+            }
+            return(max) ;
+        }
+         maxInArray(array);
+        function minInArray (array){
+            var min = array[0];
+            for( var i=0;i<array.length;i++){
+                if(array[i]<min){
+                    min = array[i];
+                }
+            }
+            return( min);
+        }
+        minInArray(array);
+        function sumInArray (array){
+            var sum = 0;
+            var tbc = 0;
+            for(var i=0;i<array.length;i++){
+                sum = sum + array[i];                
+            }
+            tbc = sum/array.length;
+            alert ("tổng mảng là :" + sum + "TBC của mảng là " + tbc);
+        }
+        sumInArray(array)
+        function evenNumberInArray(array){
+            var evenNumber = 0;
+            var sumEven = 0;
+            var tbcEven = 0;
+            for(var i=0;i<array.length;i++)
+                if(array[i]%2 == 0){
+                    evenNumber = evenNumber + 1;
+                    sumEven = array[i] + sumEven;
+                }
+            
+            tbcEven = sumEven/evenNumber;
+            alert ("số lượng chẳn là :" + evenNumber + " tổng số chẳn là: " + sumEven + "trung bình cộng số chẳn là :" + tbcEven);
+        }
+        evenNumberInArray(array);
+    </script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <link rel="stylesheet" href="">
+</head>
+
+<body>
+<h2 style= "color: blue"id=" Nokia"</h2>
+<label>Nokia:</label>
+<label id="statusnokia"></label>
+<hr>
+<textarea rows="4" cols="50" id="messmiss1"></textarea> </br>
+<input type="submit" id="sendmes" value="sent" onclick="guitinnhan()">
+<input type="submit" id="NokiaHTD" value=" HộpThưĐi" >
+<input type="submit" id="sac" value=" click để sạc" onclick="sacpin" >
+<input type="submit" id="chedodienthoai" value=" chế độ slepp" onclick="slepp" >
+<br>
+<br>
+
+<h2 style= "color: #f524ff" id=" Iphone" X</h2>
+<label>Iphone:</label>
+<label id="statusiphone"></label>
+<hr>
+<textarea rows="4" cols="50" id="messmiss2"></textarea> </br>
+<input type="submit" value="Hộp Thư Đến" id="messden" onclick="iphonexemtn()">
+<input type="submit" id="sac" value=" click để sạc" onclick="sacpin" >
+<input type="submit" id="chedodienthoai" value=" chế độ slepp" onclick="slepp" >
+
+<script>
+
+    class Mobile {
+        constructor(_type, _pin, _status) {
+            this.type = _type;
+            this.pin = _pin;
+            this.status = _status;
+            this.messagegui = [];
+            this.messageNhan = [];
+            this.messageTam = [];
+        }
+
+        isstatus() {
+            if (this.pin === 0) {
+                return "Điện thoại tắt";
+            } else {
+                if (this.status) {
+                    return " đang hoạt động";
+                } else {
+                    return "Điện thoại tắt";
+                }
+            }
+        }
+
+        //  battatdienthoai() {
+        //     if (this.status){
+        //          this.status = false;
+        //      } else {
+        //          this.status = true;
+        //      }
+        //  }
+        guiTN(messTN) {
+            this.messagegui.push(messTN);
+
+            nhanTN(messTN)
+            {
+                this.messageNhan.push(messTN);
+            }
+            // chedodienthoai(){
+            //
+            // }
+
+
+        }
+    }
+
+    var mynokia= new Mobile("Nokia", 80, true);
+    var myIphone= new Mobile("Iphone", 90, true);
+    document.getElementById("statusnokia").innerHTML = mynokia.isstatus();
+    document.getElementById("statusiphone").innerHTML = myIphone.isstatus();
+
+    function guitinnhan(){
+        let messTam = document.getElementById("messmiss1").value;
+        mynokia.guiTN(messTam);
+        myIphone.nhanTN(messTam);
+        document.getElementById("messden").value = "Hộp Thư Đến(" + myIphone.messageNhan.length +")";
+        document.getElementById("NokiaHTD").value = "Hộp Thư Đi(" + mynokia.messagegui.length +")";
+        document.getElementById("messmiss1").value = "";
+    }
+</script>
+</body>
+
+</html>

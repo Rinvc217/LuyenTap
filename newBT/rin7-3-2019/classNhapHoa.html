@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>nhập hoa</title>
+</head>
+<body>
+    <script>
+    class Hoa {
+        constructor(_name,_age,_color,_price,_soil){    
+            this.name = _name;
+            this.age = _age;
+            this.color = _color;
+            this.price = _price;
+            this.soil = _soil;
+        }
+    }
+
+        var dsHoa = [];
+        for( var i=0; i<2; i++){
+            name = prompt('nhập tên loài hoa : ' + i);
+            age = prompt('nhập tuổi của hoa: ' + i);
+            color = prompt('nhập màu hoa: ' + i);
+            price = prompt('nhập giá của hoa: ' + i);
+            soil = prompt('nhập đất trồng của hoa: ' + i);
+            dsHoa[i] = new Hoa(name,age,color,price,soil);
+        }
+
+        for(var i=0; i<dsHoa.length; i++){
+            if(dsHoa[i].color == 'đỏ' && dsHoa[i].soil == 'thịt'){
+                document.write('loài hoa '+ dsHoa[i].name + ' có tuổi là ' + dsHoa[i].age + ' màu ' + dsHoa[i].color + 'có giá là ' + dsHoa[i].price + ' được trồng ở đất ' + dsHoa[i].soil + '<br/>')
+            }
+            
+        }
+    
+    </script>
+</body>
+</html>

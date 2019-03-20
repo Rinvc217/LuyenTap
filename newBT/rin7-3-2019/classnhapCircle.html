@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Circle {
+        constructor(_radius,_color){
+            this.radius = _radius;
+            this.color = _color;
+        }
+       
+
+        areaCircle(){
+            var area = Math.PI * this.radius * this.radius;
+            return(area);
+        }
+    
+        callCircle(){
+            
+            var area = this.areaCircle();
+            return (" có bán kính: " + this.radius + " diện tich là: "+ area);
+        }
+    }
+
+    var dsCircle = [];
+    for(var i=0; i<3; i++){
+        let radius = prompt("nhập bán kính hình tròn: "+ (i+1));
+        let color = prompt("nhập màu hình tròn: " + (i+1));
+        dsCircle[i] = new Circle(radius,color);
+    }
+
+    for(var i=0; i<dsCircle.length; i++){
+        if(dsCircle[i].areaCircle() > 500000){
+            document.write (" hình tròn" + (i+1) + "có màu "+ dsCircle[i].color + " " + dsCircle[i].callCircle() + "<br/>");
+        }
+    }
+        
+    </script>
+</body>
+</html>

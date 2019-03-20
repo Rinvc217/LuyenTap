@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class HocVien{
+        constructor(_name,_diem){
+            this.name = _name;
+            this.diem = _diem;
+        }
+        toString(){
+            return ("Học Viên: " + this.name  + " có điểm modul 1 là: " + this.diem + "</br>");
+        }
+    }
+
+    class LopHoc {
+        constructor(_namelop,_year,_room,_dsSinhvien){
+            this.namelop = _namelop;
+            this.year = _year;
+            this.room = _room;
+            this.dsSinhVien = _dsSinhvien;
+        }
+        
+        // dsLopHoc(){
+        //     return("học lớp: " + this.namelop + "ngày học "+ this.year);
+        // }
+        
+    }
+
+    
+    var name = prompt("nhập tên lớp ");
+    var year = prompt("nhập năm vào học");
+    var room = prompt("nhập phòng học ");
+    var dsSv = [];
+
+    var objLopHocC0119 = new LopHoc(name,year,room,dsSv);
+
+    for (var i=0;i<3;i++){
+        var nameHv = prompt("nhập tên học viên số " + (i+1));
+        var diem = prompt("nhập điểm của học viên " + nameHv );
+        var sv = new HocVien(nameHv,diem);
+        objLopHocC0119.dsSinhVien.push(sv);
+    }
+    
+    for (var i=0;i<objLopHoc.dsSinhVien.length;i++){
+        document.write(objLopHocC0119.dsSinhVien[i].toString());
+    }
+
+</script>
+</body>
+</html>

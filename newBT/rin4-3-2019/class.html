@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor (_name,_age,_sex)  {
+                this.name = _name;
+                this.age = _age;
+                this.sex = _sex;
+            }
+            
+            get hello(){
+                var txtReturn = " chào bạn " + this.name + this.age + " Tuổi "  + "giơi tính là  " + this.sex ;
+                if(this.age>=18){
+                    txtReturn + "là người lớn";
+                }else{
+                    txtReturn + "là trẻ em";
+                }
+                return txtReturn;
+            }
+        }
+        //var nguoi1 = new Person("Rin",23,"Nam");
+
+       //Tao 1 mang 10 ban ten rin, tuoi ngau nhien khac nhau
+       //In a danh sach loi chao tren trang lan luot 10 ban do
+       //Math.floor(Math.random() * 100);  
+        var dsNguoi = [];
+        for (var i=0; i<10; i++){
+            var nguoi = new Person("Rin",Math.floor(Math.random() * 100) +1,"Nam");
+            dsNguoi.push(nguoi);
+        }
+        
+        for (var i=0; i< dsNguoi.length; i++){
+            document.write(dsNguoi[i].hello + "</br>");
+        } 
+       
+
+    </script>
+</body>
+</html>

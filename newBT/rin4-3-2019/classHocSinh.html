@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Student {
+        constructor (_name,_lastname,_sex,_id,_toan,_ly,_hoa){
+            this.name = _name;
+            this.lastname = _lastname;
+            this.sex = _sex;
+            this.id = _id;
+            this.toan = _toan;
+            this.ly = _ly;
+            this.hoa = _hoa;
+        }
+
+        dtbStudent (){
+            var dtb = 0;
+            dtb = (this.toan + this.ly + this.hoa)/3;
+            return (dtb);
+        }
+
+        xeploaiStuden (){
+            var dtb = this.dtbStudent();
+            var txtReturn = "";
+            if (dtb>9)
+                txtReturn = "Xuất sắc";
+            else if (dtb>8)
+                txtReturn = "Giỏi";
+                else if (dtb >=5)
+                    txtReturn = "TB khá";
+                    else
+                        txtReturn = "Yếu";
+
+            var txtThiLai = "";
+            if (this.toan<5)
+                txtThiLai = txtThiLai + " Toán";
+
+            if (this.ly<5)
+                txtThiLai = txtThiLai + " Lý";
+
+            if (this.hoa<5)
+                txtThiLai = txtThiLai + " Hóa";
+
+            if (txtThiLai.length>0)
+                txtThiLai = " Thi lại các  môn " + txtThiLai;
+            else
+                txtThiLai = " Không thi lại môn nào";
+
+            txtReturn = txtReturn + txtThiLai;
+            return txtReturn;
+        }
+
+        callStudent (){
+            var dtb = this.dtbStudent();
+            var xeploai = this.xeploaiStuden();
+            return (this.lastname + " " + this.name + ", " + this.id + ", " + dtb + ", " + xeploai);
+        }
+    }
+
+   var objstudent = new Student("Rin","Võ Công","nam","CG74384372",7,4,9);
+   alert(objstudent.callStudent());
+
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Name CiTy</title>
+</head>
+<body>
+   <h2 style="text-align:center"> CITY</h2>
+   <div style="text-align: center;">
+    <b style="color: rgb(15, 211, 113)">Tên TP(Tỉnh):</b> <input type="text" id="City">
+    <b style="color:darkorchid">ĐỊA DANH :</b> <input type="text" id="From">
+    <p id="errors"></p>
+    <button type="button" onclick="myFunction()">TÌM</button>
+</div>
+<script>
+    function myFunction(){
+        var nameCity= document.getElementById("City").value
+        var arrayCITY = ["huế","đà nẳng","quảng trị","ninh bình"];
+        var arrayFROM = ["Đại Nội","Cầu Rồng","Thành Cổ","Tràng An"];
+        var timthay = false;
+        for(var i = 0;i < arrayCITY.length;i++){
+            if (nameCity == arrayCITY[i]){
+                document.getElementById("From").value = arrayFROM[i];
+                timthay = true;
+                break;
+            }
+            } 
+            if(timthay ==false){
+             document.getElementById("errors").innerText="không tìm thấy";
+         }
+    }
+</script>
+</body>
+</html>

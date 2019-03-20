@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    class Circle {
+        constructor(_radius,_color){
+            this.radius = _radius;
+            this.color = _color;
+        }
+
+        areCircle(){
+            var are = Math.PI * this.radius + this.radius;
+            return(are);
+        }
+
+    }
+    var Circle1 = new Circle(50,'xanh');
+    document.write("hình tròn có màu " + Circle1.color + " bán kính là " + Circle1.radius + "diện tích là "+ Circle1.areCircle()+"<br/>");
+    var Circle2 = new Circle(6,'đỏ');
+    document.write("hình tròn có màu " + Circle2.color + " bán kính là " + Circle2.radius + "diện tích là "+ Circle2.areCircle()+"<br/>");
+   var Circle3 = new Circle(2,'đen');
+   document.write("hình tròn có màu " + Circle3.color + " bán kính là " + Circle3.radius + "diện tích là "+ Circle3.areCircle()+"<br/>");
+   var Circle4 = new Circle(12,'trắng');
+   document.write("hình tròn có màu " + Circle4.color + " bán kính là " + Circle4.radius + "diện tích là "+ Circle4.areCircle()+"<br/>");
+    </script>
+</body>
+</html>

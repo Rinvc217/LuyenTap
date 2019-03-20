@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var array = prompt("nhập arrayNumber");
+    // var array = [1,2,3,4,4,5,5,65,757,67,2,432,324];
+
+    class BasicNumbers {
+        constructor(_array){
+            this.array = _array;
+        }
+        
+        maxArray() {
+            var max = this.array[0];
+            for(var i=0;i<this.array.length;i++){
+                if(this.array[i]>max){
+                    max = this.array[i];
+                }
+            }
+            return(max) ;
+        }
+
+        minArray() {
+            var min = this.array[0];
+            for(var i=0;i<this.array.length;i++){
+                if(this.array[i]<min){
+                    min = this.array[i];
+                }
+            }
+            return(min);
+        }
+
+        sumArray() {
+            var sum = 0;
+            for(var i=0;i<this.array.length;i++){
+                sum = sum + this.array[i];
+            }
+            return(sum);
+        }
+
+        tbcArray() {
+            var tbc = 0;
+            var sum = this.sumArray();
+            tbc = sum/this.array.length;
+            return(tbc);
+        }
+        
+        evenNumberArray() {
+            var evenNumber = this.array[0];
+            for(var i=0;i<this.array.length;i++){
+                if(this.array[i]%2 == 0){
+                    evenNumber = evenNumber +1;
+                }
+            }
+            return(evenNumber);
+        }
+
+        sumEvenNumberArray() {
+            var sumEvenNumber = 0;
+            for(var i=0;i<this.array.length;i++){
+                if(this.array[i] % 2 == 0){
+                    sumEvenNumber = sumEvenNumber + this.array[i];
+                }
+            }
+            return(sumEvenNumber);
+        }
+
+        tbcEvenNumberArray() {
+            var sumEvenNumber = this.sumEvenNumberArray();
+            var evenNumber = this.evenNumberArray();
+            var tbcEvenNumber = sumEvenNumber/evenNumber;
+            return(tbcEvenNumber);
+        
+        }    
+    }
+
+    var basic = new BasicNumbers(array);
+    document.write(basic.tbcEvenNumberArray());
+</script>
+</body>
+</html>
